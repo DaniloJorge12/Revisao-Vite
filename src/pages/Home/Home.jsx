@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./Home.module.css";
 import times from "../../data/times.json";
 import Header from "../../components/Header/Header"
+import Card from '../../components/Card/Card';
 
 export default function Home() {
     const [cards, setCards] = useState(times);
@@ -26,14 +27,13 @@ export default function Home() {
 
             <main className={styles.container}>
                 {cards.map((card) => (
-                    <article key={card.id} className={styles.card}>
-                        <img src={card.imagem} alt={card.nome} />
-                        <h2>{card.nome}</h2>
-                        <p className={styles.descricao}>{card.descricao}</p>
-                        <p>
-                            <span>Campeão:</span> {'🏆'.repeat(card.campeao)}
-                        </p>
-                    </article>
+                    <Card
+                        key={card.id}
+                        imagem={card.imagem}
+                        nome={card.nome}
+                        descricao={card.descricao}
+                        campeao={card.campeao}
+                    />
                 ))}
             </main>
         </>

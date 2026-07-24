@@ -1,13 +1,13 @@
 import styles from './Card.module.css';
 
-export default function Card({ card }) {
+export default function Card({ imagem, nome, descricao, campeao }) {
     return (
-        <article key={card.id} className={styles.card}>
-            <img src={card.imagem} alt={card.nome} />
-            <h2>{card.nome}</h2>
-            <p className={styles.descricao}>{card.descricao}</p>
+        <article className={styles.card}>
+            <img src={imagem} alt={nome} />
+            <h2>{nome}</h2>
+            <p className={styles.descricao}>{descricao}</p>
             <p>
-                <span>Campeão:</span> {'🏆'.repeat(card.campeao)}
+                <span>Campeão:</span> {'🏆'.repeat(campeao)}
             </p>
         </article>
     );
