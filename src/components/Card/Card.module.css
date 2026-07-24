@@ -31,6 +31,8 @@
 
 .descricao {
     margin-bottom: 5px;
+    text-align: justify;
+    text-indent: 2rem;
 }
 
 .card span {
